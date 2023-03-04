@@ -4,12 +4,14 @@ const Component = (props) => {
   const [error, setError] = useState(false);
 
   const changeFunc = () => {
+  console.log("changeFunc called");
   try {
     throw new Error("An error occurred.");
   } catch (error) {
     setError(true);
   }
 };
+
 
   return (
     <>
