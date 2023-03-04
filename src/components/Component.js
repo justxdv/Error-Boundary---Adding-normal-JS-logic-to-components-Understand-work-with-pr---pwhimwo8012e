@@ -16,7 +16,8 @@ const Component = (props) => {
   return (
     <>
       {error && <div>{somethingNotDefined}</div>}
-      <button onClick={changeFunc}>Click me to generate an error</button>
+     <button id="gen" onClick={() => changeFunc()}>Generate Error</button>
+
     </>
   );
 };
