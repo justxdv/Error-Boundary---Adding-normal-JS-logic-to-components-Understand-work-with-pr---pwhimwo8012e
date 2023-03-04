@@ -4,20 +4,16 @@ const Component = (props) => {
   const [error, setError] = useState(false);
 
   const changeFunc = () => {
-  console.log("changeFunc called");
-  try {
-    throw new Error("An error occurred.");
-  } catch (error) {
     setError(true);
-  }
-};
+  };
 
+  if (error) {
+    throw new Error("An error occurred.");
+  }
 
   return (
     <>
-      {error && <div>{somethingNotDefined}</div>}
-     <button id="gen" onClick={() => changeFunc()}>Generate Error</button>
-
+      <button onClick={changeFunc}>Click me to generate an error</button>
     </>
   );
 };
