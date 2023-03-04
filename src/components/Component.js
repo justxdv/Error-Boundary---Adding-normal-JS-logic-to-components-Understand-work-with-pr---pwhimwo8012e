@@ -5,6 +5,7 @@ const Component = (props) => {
 
   const changeFunc = () => {
     setError(true);
+    console.error('An error occurred.');
   };
 
   if (error) {
