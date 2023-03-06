@@ -2,21 +2,12 @@ import React, { useState } from "react";
 
 const Component = (props) => {
   const [error, setError] = useState(false);
-
-  const changeFunc = () => {
-    setError(true);
-    console.error('An error occurred.');
-  };
+  props.change(setError);
 
   if (error) {
-    throw new Error("An error occurred.");
+    throw new Error("My error");
   }
-
-  return (
-    <>
-      <button onClick={changeFunc}>Click me to generate an error</button>
-    </>
-  );
+  return <>{error && <div>{""}</div>}</>;
 };
 
 export default Component;
